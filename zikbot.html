@@ -1,16 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="https://cdn.botpress.cloud/webchat/v0/inject.js"></script>
-    <script
-      src="https://mediafiles.botpress.cloud/9ed3c6d1-19d5-42ec-9afb-cf9a5dc4943e/webchat/config.js"
-      defer
-    ></script>
+    <title>Zikbot test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        color: white;
+        background-color: #170e3e;
+        font-family: Arial, sans-serif;
+      }
+
+      .center-div {
+        width: 45vw;
+        height: 75vh;
+
+        box-shadow: 0 0 15px 1px rgb(162, 0, 255);
+
+        /* box-shadow: 0 0 300px #fdcbcc; */
+        border-radius: 30px;
+
+        box-sizing: border-box;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      @media only screen and (max-width: 600px) {
+        .center-div {
+          height: 86vh;
+          width: 96vw;
+
+          box-shadow: 0 0 300px rgb(162, 0, 255);
+          border-radius: 30px;
+
+          box-sizing: border-box;
+          color: white;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+        }
+      }
+
+      .glow {
+        font-size: 80px;
+        /* color: #fff; */
+        text-align: center;
+        animation: glow 1s ease-in-out infinite alternate;
+        font-size: 2rem;
+        font-weight: 600;
+        color: rgb(238, 220, 255);
+        text-align: center;
+      }
+
+      @-webkit-keyframes glow {
+        from {
+          text-shadow: 0 0 20px #fff, 0 0 30px #3e005f, 0 0 40px #3e005f,
+            0 0 50px #3e005f;
+        }
+
+        to {
+          text-shadow: 0 0 20px #fff, 0 0 30px #880bef;
+        }
+      }
+    </style>
   </head>
+
   <body>
-    <p>click on the icon below</p>
+    <div>
+      <div class="absolute inset-4">
+        <p class="glow">Bot by Infinix AI</p>
+        <div
+          class="center-div relative h-full w-full overflow-clip rounded-md border border-zinc-200 bg-white p-2 px-5 py-5"
+        >
+          <iframe
+            style="border: none; width: 100%; height: 100%"
+            srcdoc="<body><script src='https://cdn.botpress.cloud/webchat/v0/inject.js'></script>
+            <script>
+              window.botpressWebChat.init({
+                'composerPlaceholder': 'Chat with bot',
+                'botConversationDescription': 'This chatbot was built surprisingly fast with Botpress',
+                'botId': '9ed3c6d1-19d5-42ec-9afb-cf9a5dc4943e',
+                'hostUrl': 'https://cdn.botpress.cloud/webchat/v0',
+                'messagingUrl': 'https://messaging.botpress.cloud',
+                'clientId': '9ed3c6d1-19d5-42ec-9afb-cf9a5dc4943e',
+                'botName': 'Zik Test Bot',
+                'containerWidth': '100%25',
+                'layoutWidth': '100%25',
+                'hideWidget': true,
+                'showCloseButton': false,
+                'disableAnimations': true,
+                'closeOnEscape': false,
+                'showConversationsButton': false,
+                'enableTranscriptDownload': false,
+                'stylesheet':'https://webchat-styler-css.botpress.app/prod/code/ded098dc-1365-4e4e-9405-50f1cbd8464a/v71994/style.css'
+            });
+            window.botpressWebChat.onEvent(function () { window.botpressWebChat.sendEvent({ type: 'show' }) }, ['LIFECYCLE.LOADED']);
+            </script>
+          </body>"
+            width="100%"
+            height="100%"
+          ></iframe>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
